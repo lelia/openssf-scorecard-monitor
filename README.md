@@ -53,7 +53,7 @@ _[Sample issue](https://github.com/nodejs/security-wg/issues/885)_
 
 With the following workflow, you will get the most out of this action:
 
-- Trigger manual or by Cron job every Sunday
+- Trigger manually or by Cron job every Sunday
 - It will scan the org(s) in scope looking for repositories that are available in the OpenSSF Scorecard
 - It will store the database and the scope files in the repo
 - It will generate an issue if there are changes in the score
@@ -71,6 +71,7 @@ on:
 permissions:
   # Write access in order to update the local files with the reports
   contents: write
+  # Write access only required if creating PRs (see Advanced Tips below)
   pull-requests: none 
   # Write access in order to create issues
   issues: write
